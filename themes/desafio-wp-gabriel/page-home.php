@@ -1,3 +1,3 @@
-<?php get_header(); ?>
+<?php get_header('play'); ?>
 
-<?php get_footer(); ?>
+<?php get_footer('play'); ?>
