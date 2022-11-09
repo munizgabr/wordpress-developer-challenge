@@ -6,24 +6,26 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-}
-.main-manu {
-    display: flex;
-    gap: 45px;
-    ul {
-        font-size: 18px;
-        color: white;
-        font-weight: 600;
-        padding: 0;
-        a {
-            width: 100%;
-            height: 100%;
-            &:hover {
-                color: #ff0000;
+    .main-manu {
+        display: flex;
+        gap: 45px;
+        li {
+            font-family: "CircularSpotifyMedium";
+            font-size: 18px;
+            color: white;
+            font-weight: 600;
+            padding: 0;
+            a {
+                width: 100%;
+                height: 100%;
+                &:hover {
+                    color: #ff0000;
+                }
             }
-        }
+            }
     }
 }
+
 .main-manu-mobile {
     display: none;
 }
@@ -44,8 +46,19 @@ header {
         align-items: center;
         margin: 0;
         padding-left: 0;
+        li {
+            height: 100%;
+            font-family: "CircularSpotifyBlack";
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     }
-    .main-manu {
-        display: none;
+    .wrapper-header {
+        .main-manu {
+            display: none;
+        }
     }
 }
