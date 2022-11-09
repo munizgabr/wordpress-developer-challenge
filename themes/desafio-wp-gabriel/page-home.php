@@ -11,7 +11,7 @@ get_header();
         <div class="video__btn"><a href="#">Mais informações</a></div>
     </div>
     <div class="swiper-content">
-        <span class="swiper-title center">Filmes</span>
+        <span class="swiper-title">Filmes</span>
         <div class="swiper filme">
             <div class="swiper-wrapper swiper-position">
                 <div class="swiper-slide swiper-modify">
@@ -69,7 +69,7 @@ get_header();
     </div>
 
     <div class="swiper-content">
-        <span class="swiper-title center">Documentários</span>
+        <span class="swiper-title">Documentários</span>
         <div class="swiper documentario">
             <div class="swiper-wrapper swiper-position">
                 <div class="swiper-slide swiper-modify">
@@ -127,7 +127,7 @@ get_header();
     </div>
 
     <div class="swiper-content">
-        <span class="swiper-title center">Séries</span>
+        <span class="swiper-title">Séries</span>
         <div class="swiper serie">
             <div class="swiper-wrapper swiper-position">
                 <div class="swiper-slide swiper-modify">
@@ -190,21 +190,50 @@ get_header();
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".filme", {
-            slidesPerView: 6,
+            
             spaceBetween: 25,
-            centeredSlides: true,
+            breakpoints: {
+                350: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                },
+                1100: {
+                    slidesPerView: 6,
+                    spaceBetween: 25,
+                },
+            },
         });
 
         var swiper = new Swiper(".documentario", {
-            slidesPerView: 6,
             spaceBetween: 25,
-            centeredSlides: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                },
+                1100: {
+                    slidesPerView: 6,
+                    spaceBetween: 25,
+                },
+            },
         });
 
         var swiper = new Swiper(".serie", {
-            slidesPerView: 6,
             spaceBetween: 25,
-            centeredSlides: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                },
+                1100: {
+                    slidesPerView: 6,
+                    spaceBetween: 25,
+                },
+            },
         });
     </script>
     <?php

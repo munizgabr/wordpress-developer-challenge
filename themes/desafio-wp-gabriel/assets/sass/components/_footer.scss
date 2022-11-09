@@ -1,0 +1,14 @@
+footer {
+    background-color: #121212;
+    margin-top: 80px;
+}
+.wrapper-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 0;
+    align-items: start;
+    span {
+        color: white;
+    }
+}
