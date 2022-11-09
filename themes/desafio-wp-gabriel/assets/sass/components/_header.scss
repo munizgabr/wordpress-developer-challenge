@@ -24,3 +24,28 @@ header {
         }
     }
 }
+.main-manu-mobile {
+    display: none;
+}
+
+@media screen and (max-width:1185px) {
+    .main-manu-mobile {
+        display: block;
+        position: fixed;
+        bottom: -16px;
+        left: 0;
+        right: 0;
+        display: flex;
+        z-index: 999999;
+        height: 75px;
+        color: white;
+        background-color: #000000c7;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding-left: 0;
+    }
+    .main-manu {
+        display: none;
+    }
+}
