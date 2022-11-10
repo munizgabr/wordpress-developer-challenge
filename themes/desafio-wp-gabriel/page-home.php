@@ -1,5 +1,12 @@
 <?php
 get_header();
+$category = array(
+    'taxonomy' => 'tipo',
+    'orderby' => 'name',
+    'order'   => 'ASC'
+);
+$cats = get_categories($category);
+
 
 $args = [
     'posts_per_page' => 10,
@@ -34,9 +41,10 @@ if($video->have_posts()) :
     while ( $video->have_posts() ) :
         $video->the_post();
         $thumbnail = get_the_post_thumbnail_url(get_the_ID(),'thumb_1');
-        var_dump($video);?>
+        // var_dump($video);
+    foreach($cats as $cat) {?>
     <div class="swiper-content">
-        <span class="swiper-title">Filmes</span>
+        <span class="swiper-title"><?php echo $cat->name?></span>
         <div class="swiper filme">
             <div class="swiper-wrapper swiper-position">
                 <div class="swiper-slide swiper-modify">
@@ -53,123 +61,9 @@ if($video->have_posts()) :
             </div>
         </div>
     </div>
-    <?php endwhile; ?>
+    <?php }
+    endwhile; ?>
 <?php endif; ?>
-    <!-- <div class="swiper-content">
-        <span class="swiper-title">Documentários</span>
-        <div class="swiper documentario">
-            <div class="swiper-wrapper swiper-position">
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="swiper-content">
-        <span class="swiper-title">Séries</span>
-        <div class="swiper serie">
-            <div class="swiper-wrapper swiper-position">
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-                <div class="swiper-slide swiper-modify">
-                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título">
-                    <span class="video__cat--duration">130M</span>
-                    <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -177,7 +71,6 @@ if($video->have_posts()) :
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".filme", {
-            
             spaceBetween: 25,
             breakpoints: {
                 350: {
