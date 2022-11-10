@@ -3,13 +3,15 @@ get_header();
 $category = array(
     'taxonomy' => 'tipo',
     'orderby' => 'name',
-    'order'   => 'ASC'
 );
 $cats = get_categories($category);
 
+$postsPerPage = 10;
+$highlightPostsCount = 1;
+$regularPostsCount = $postsPerPage - $highlightPostsCount;
 
 $args = [
-    'posts_per_page' => 10,
+    'posts_per_page' => $postsPerPage,
     'post_type' => 'video',
     'tax_query' => array(
         array(
@@ -23,8 +25,10 @@ $args = [
         )
     )
 ];
-    $blogInfo = get_bloginfo('template_url');
+$blogInfo = get_bloginfo('template_url');
 $video = new WP_Query( $args );
+$highlights = array_slice($video->posts, 0, $highlightPostsCount);
+$regularPosts = array_slice($video->posts, 1, $regularPostsCount);
 if($video->have_posts()) :
     ?>
 <div class="video" style="background-image: url('<?php echo get_bloginfo('template_url'); ?>/assets/img/tower.jpg'); height: 75vh;">
@@ -38,11 +42,12 @@ if($video->have_posts()) :
     </div>
 </div>
     <?php
+    foreach($cats as $cat) {
     while ( $video->have_posts() ) :
         $video->the_post();
         $thumbnail = get_the_post_thumbnail_url(get_the_ID(),'thumb_1');
-        // var_dump($video);
-    foreach($cats as $cat) {?>
+        $duration = get_field('duration');
+        var_dump($duration);?>
     <div class="swiper-content">
         <span class="swiper-title"><?php echo $cat->name?></span>
         <div class="swiper filme">
@@ -54,16 +59,17 @@ if($video->have_posts()) :
                         echo '<img src="'.$blogInfo.'/assets/img/pexels-gabb-tapic-3568544.jpg" alt="'.get_the_title().'">';
                     } ?>
                     <!-- <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/pexels-gabb-tapic-3568544.jpg" alt="Título"> -->
-                    <span class="video__cat--duration">130M</span>
+                    <span class="video__cat--duration"><?php echo $duration;?>M</span>
                     <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>
                 </div>
                
             </div>
         </div>
     </div>
-    <?php }
-    endwhile; ?>
-<?php endif; ?>
+    <?php
+    endwhile;
+        }
+    endif; ?>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
