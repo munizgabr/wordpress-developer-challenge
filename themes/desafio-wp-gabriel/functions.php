@@ -16,7 +16,7 @@ $parent_term_id = $parent_term['term_id']; // get numeric term id
       'Série',
       'Documentário',
       array(
-        'description' => 'This is an example category created with wp_insert_term.',
+        'description' => 'Defina qual categoria o vídeo se encaixa.',
         'slug'        => 'tipo-video'
       )
   );
