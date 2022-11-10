@@ -8,6 +8,9 @@ if (function_exists('add_image_size')) {
 // Custom post
 require(get_template_directory() . '/functions/custompost/video.php' );
 
+// ACF
+require(get_template_directory() . '/functions/acf/video-info.php' );
+
 function example_insert_category() {
   $parent_term = term_exists( 'video' ); // array is returned if taxonomy is given
 $parent_term_id = $parent_term['term_id']; // get numeric term id
