@@ -12,12 +12,13 @@ header {
         li {
             font-family: "CircularSpotifyMedium";
             font-size: 18px;
-            color: white;
             font-weight: 600;
             padding: 0;
             a {
                 width: 100%;
                 height: 100%;
+                color: white;
+                text-decoration: none;
                 &:hover {
                     color: #ff0000;
                 }
@@ -40,7 +41,6 @@ header {
         display: flex;
         z-index: 999999;
         height: 75px;
-        color: white;
         background-color: #000000c7;
         justify-content: space-around;
         align-items: center;
@@ -53,6 +53,7 @@ header {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                color: white;
             }
         }
     }

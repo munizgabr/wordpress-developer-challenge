@@ -29,12 +29,15 @@
         background-color: transparent;
     }
     .video__content {
-        font-size: 45px;
-        color: white;
-        font-weight: bold;
-        text-align: start;
-        width: 50%;
-        font-family: "CircularSpotifyBlack";
+        a {
+            font-size: 45px;
+            color: white;
+            font-weight: bold;
+            width: 50%;
+            font-family: "CircularSpotifyBlack";
+            text-decoration: none;
+            font-size: 24px;
+        }
     }
     .video__btn a {
         color: white;
