@@ -42,35 +42,6 @@ register_taxonomy("tipo",
             "rewrite"         => true
         )
 );
-// global $post, $theme_videos_metaboxes;
-// $theme_videos_metaboxes = array(
-//     "accessories" => array (
-//       "name"      => "title",
-//       "default"   => "",
-//       "label"     => __('Título do vídeo', ''),
-//       "type"      => "input",
-//       "desc"      => __('', ''),
-//       "class"     => ''
-//   ),
-//     "pais" => array (
-//         "name"      => "duration",
-//         "default"   => "",
-//         "label"     => __('Duração', ''),
-//         "type"      => "input",
-//         "desc"      => __('', ''),
-//         "class"     => ''
-//     ),
-//     "cidade_retirada" => array (
-//         "name"      => "excerpt",
-//         "default"   => "",
-//         "label"     => __('Resumo', ''),
-//         "type"      => "input",
-//         "desc"      => __('', ''),
-//         "class"     => ''
-//     ),
-// );
-
-//add_action("admin_init", "admin_init_video");
 
 add_action('save_post', 'save_details_video');
 
@@ -89,9 +60,9 @@ add_action("manage_posts_custom_column",  "video_custom_columns");
 function video_edit_columns($columns){
     $columns = array(
         "cb" => "<input type=\"checkbox\" />",
-        "title" => __('Titulo do video', 'somadev'),
-        "video_desc" => __('Resumo video', 'somadev'),
-        "img-video" => __('Foto', 'somadev'),
+        "title" => __('Titulo do video'),
+        "video_desc" => __('Resumo video'),
+        "img-video" => __('Foto'),
     );
     return $columns;
 }

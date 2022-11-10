@@ -71,7 +71,8 @@ header {
   height: 100%;
   object-fit: cover;
 }
-.video .video__wrapper {
+
+.video__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,21 +80,35 @@ header {
   height: 100%;
   gap: 20px;
 }
-.video .video__cat--cat {
+
+.video__cat--cat {
   color: black;
   border: 1px solid white;
   padding: 2px 20px;
   border-radius: 2px;
   background-color: white;
 }
-.video .video__cat--duration {
+
+.video__cat--duration {
   color: white;
   border: 1px solid white;
   padding: 2px 20px;
   border-radius: 2px;
   background-color: transparent;
 }
-.video .video__content a {
+
+.video__btn a {
+  color: white;
+  background-color: red;
+  padding: 10px 50px;
+  text-decoration: none;
+}
+.video__btn a:hover {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.video__content a {
   font-size: 45px;
   color: white;
   font-weight: bold;
@@ -101,15 +116,6 @@ header {
   font-family: "CircularSpotifyBlack";
   text-decoration: none;
   font-size: 24px;
-}
-.video .video__btn a {
-  color: white;
-  background-color: red;
-  padding: 10px 50px;
-}
-.video .video__btn a:hover {
-  background-color: transparent;
-  border: 2px solid white;
 }
 
 .swiper {
