@@ -225,6 +225,11 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: "CircularSpotifyMedium";
 }
 
+.wrapper-archive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .center {
   margin: 0 auto;
   width: 1200px;
