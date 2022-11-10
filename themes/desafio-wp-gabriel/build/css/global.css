@@ -8,22 +8,23 @@ header {
   align-items: center;
   height: 100%;
 }
-
-.main-manu {
+.wrapper-header .main-manu {
   display: flex;
   gap: 45px;
 }
-.main-manu ul {
+.wrapper-header .main-manu li {
+  font-family: "CircularSpotifyMedium";
   font-size: 18px;
-  color: white;
   font-weight: 600;
   padding: 0;
 }
-.main-manu ul a {
+.wrapper-header .main-manu li a {
   width: 100%;
   height: 100%;
+  color: white;
+  text-decoration: none;
 }
-.main-manu ul a:hover {
+.wrapper-header .main-manu li a:hover {
   color: #ff0000;
 }
 
@@ -41,14 +42,23 @@ header {
     display: flex;
     z-index: 999999;
     height: 75px;
-    color: white;
     background-color: rgba(0, 0, 0, 0.7803921569);
     justify-content: space-around;
     align-items: center;
     margin: 0;
     padding-left: 0;
   }
-  .main-manu {
+  .main-manu-mobile li {
+    height: 100%;
+    font-family: "CircularSpotifyBlack";
+  }
+  .main-manu-mobile li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  .wrapper-header .main-manu {
     display: none;
   }
 }
@@ -83,12 +93,14 @@ header {
   border-radius: 2px;
   background-color: transparent;
 }
-.video .video__content {
+.video .video__content a {
   font-size: 45px;
   color: white;
   font-weight: bold;
-  text-align: start;
   width: 50%;
+  font-family: "CircularSpotifyBlack";
+  text-decoration: none;
+  font-size: 24px;
 }
 .video .video__btn a {
   color: white;
@@ -137,6 +149,7 @@ header {
   background-color: transparent;
   gap: 10px;
   align-items: start;
+  text-align: start;
 }
 .swiper-modify .video__content {
   width: 100%;
@@ -198,6 +211,18 @@ footer {
 }
 .wrapper-footer span {
   color: white;
+}
+
+@font-face {
+  font-family: "CircularSpotifyMedium";
+  src: url(../../fonts/CircularSpotifyTxT-Med.woff2) format("woff2");
+}
+@font-face {
+  font-family: "CircularSpotifyBlack";
+  src: url(../../fonts/CircularSpotifyTxT-Black.woff2) format("woff2");
+}
+h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: "CircularSpotifyMedium";
 }
 
 .center {
