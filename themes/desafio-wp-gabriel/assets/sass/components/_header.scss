@@ -41,19 +41,24 @@ header {
         display: flex;
         z-index: 999999;
         height: 75px;
-        background-color: #000000c7;
+        background-color: #000;
+        opacity: 0.9;
         justify-content: space-around;
         align-items: center;
         margin: 0;
         padding-left: 0;
         li {
             height: 100%;
+            display: grid;
             font-family: "CircularSpotifyBlack";
+            align-content: center;
             a {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 color: white;
+                text-decoration: none;
+                gap: 5px;
             }
         }
     }
