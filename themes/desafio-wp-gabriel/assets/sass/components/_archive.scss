@@ -37,9 +37,12 @@
     .wrapper-archive {
         grid-template-columns: 1fr;
         .swiper-slide {
-               img {
-                   width: 360px;
-               } 
+            a{
+                width: 100%;
+                img {
+                    width: 100%;
+                } 
+            }
        }
     }
     .video__archive {
