@@ -1,6 +1,20 @@
 .wrapper-archive {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    .swiper-slide {
+         flex-shrink: unset; 
+         width: unset; 
+         height: unset; 
+         position: unset; 
+         transition-property: unset;
+         align-self: start;
+            img {
+                display: block;
+                width: 195px;
+                height: 325px;
+                object-fit: cover;
+            } 
+    }
 }
 .descriptiom {
     p {
@@ -17,15 +31,20 @@
 .video__archive {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
 }
 @media screen and (max-width: 768px) {
     .wrapper-archive {
         grid-template-columns: 1fr;
+        .swiper-slide {
+               img {
+                   width: 360px;
+               } 
+       }
     }
     .video__archive {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 20px;
     }
 }
