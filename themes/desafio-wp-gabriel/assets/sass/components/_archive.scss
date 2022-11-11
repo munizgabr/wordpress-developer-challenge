@@ -2,3 +2,30 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.descriptiom {
+    p {
+        font-size: 45px;
+        color: white;
+    }
+    .title {
+        color: red;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+}
+.video__archive {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+@media screen and (max-width: 768px) {
+    .wrapper-archive {
+        grid-template-columns: 1fr;
+    }
+    .video__archive {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}

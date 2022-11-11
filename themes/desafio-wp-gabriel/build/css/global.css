@@ -236,6 +236,33 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   grid-template-columns: 1fr 1fr;
 }
 
+.descriptiom p {
+  font-size: 45px;
+  color: white;
+}
+.descriptiom .title {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.video__archive {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-archive {
+    grid-template-columns: 1fr;
+  }
+  .video__archive {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
 .single_description {
   text-align: left;
   letter-spacing: 0.54px;
