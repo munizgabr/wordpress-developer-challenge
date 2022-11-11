@@ -16,7 +16,7 @@ $term = array_shift( $terms );
             <?php if(!empty($thumbnail)){
                 echo '<a href="'.get_the_permalink().'" title="'.get_the_title().'"><img src="'.$thumbnail.'" alt="'.get_the_title().'"></a>';
             } else {
-                echo '<a href="'.$link.'" title="'.$title.'"><img src="'.$blogInfo.'/assets/img/pexels-gabb-tapic-3568544.jpg" alt="'.get_the_title().'"></a>';
+                echo '<a href="'.$link.'" title="'.$title.'"><img src="'.get_blog_info('template_url').'/assets/img/pexels-gabb-tapic-3568544.jpg" alt="'.get_the_title().'"></a>';
             } ?>
             <span class="video__cat--duration"><?php echo $duration;?>M</span>
             <div class="video__content"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></div>

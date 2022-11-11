@@ -42,7 +42,8 @@ header {
     display: flex;
     z-index: 999999;
     height: 75px;
-    background-color: rgba(0, 0, 0, 0.7803921569);
+    background-color: #000;
+    opacity: 0.9;
     justify-content: space-around;
     align-items: center;
     margin: 0;
@@ -50,13 +51,17 @@ header {
   }
   .main-manu-mobile li {
     height: 100%;
+    display: grid;
     font-family: "CircularSpotifyBlack";
+    align-content: center;
   }
   .main-manu-mobile li a {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
+    text-decoration: none;
+    gap: 5px;
   }
   .wrapper-header .main-manu {
     display: none;
@@ -71,6 +76,9 @@ header {
   height: 100%;
   object-fit: cover;
 }
+.video .video__content a {
+  font-size: 45px;
+}
 
 .video__wrapper {
   display: flex;
@@ -84,7 +92,7 @@ header {
 .video__cat--cat {
   color: black;
   border: 1px solid white;
-  padding: 2px 20px;
+  padding: 2px 20px 0 20px;
   border-radius: 2px;
   background-color: white;
 }
@@ -92,7 +100,7 @@ header {
 .video__cat--duration {
   color: white;
   border: 1px solid white;
-  padding: 2px 20px;
+  padding: 2px 20px 0 20px;
   border-radius: 2px;
   background-color: transparent;
 }
@@ -161,9 +169,6 @@ header {
   width: 100%;
   font-size: 24px;
 }
-.swiper-modify .video__cat--duration {
-  padding: 1px 35px;
-}
 
 .swiper-content {
   padding: 80px 0 0 0;
@@ -203,6 +208,14 @@ header {
     margin-left: 20px;
   }
 }
+@media screen and (max-width: 768px) {
+  .swiper-content .swiper-modify {
+    width: 100%;
+  }
+  .swiper-content .swiper-modify a {
+    width: 100%;
+  }
+}
 footer {
   background-color: #121212;
   margin-top: 80px;
@@ -221,11 +234,11 @@ footer {
 
 @font-face {
   font-family: "CircularSpotifyMedium";
-  src: url(../../fonts/CircularSpotifyTxT-Med.woff2) format("woff2");
+  src: url(../../assets/fonts/CircularSpotifyTxT-Med.woff2) format("woff2");
 }
 @font-face {
   font-family: "CircularSpotifyBlack";
-  src: url(../../fonts/CircularSpotifyTxT-Black.woff2) format("woff2");
+  src: url(../../assets/fonts/CircularSpotifyTxT-Black.woff2) format("woff2");
 }
 h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: "CircularSpotifyMedium";
@@ -234,6 +247,20 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 .wrapper-archive {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.wrapper-archive .swiper-slide {
+  flex-shrink: unset;
+  width: unset;
+  height: unset;
+  position: unset;
+  transition-property: unset;
+  align-self: start;
+}
+.wrapper-archive .swiper-slide img {
+  display: block;
+  width: 195px;
+  height: 325px;
+  object-fit: cover;
 }
 
 .descriptiom p {
@@ -250,17 +277,23 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 .video__archive {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 @media screen and (max-width: 768px) {
   .wrapper-archive {
     grid-template-columns: 1fr;
   }
+  .wrapper-archive .swiper-slide a {
+    width: 100%;
+  }
+  .wrapper-archive .swiper-slide a img {
+    width: 100%;
+  }
   .video__archive {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
   }
 }
 .single_description {
@@ -318,6 +351,13 @@ body {
 }
 body ul li {
   list-style: none;
+}
+
+.h1-hide {
+  text-indent: -99999px;
+  width: 0;
+  height: 0;
+  float: left;
 }
 
 /*# sourceMappingURL=global.css.map */
